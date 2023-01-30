@@ -3,7 +3,7 @@ import logo from '../assets/cargogo-logo.png';
 
 export default function Navbar() {
   return (
-    <nav className="px-10 py-6 mx-8">
+    <nav className="md:px-10 md:py-6 md:mx-8 xs:px-1 xs:py-1">
       <div className="container px-4 flex flex-wrap items-center justify-between mx-auto">
         <Link to="/" className="flex items-center">
           <img src={logo} className="h-7 mr-1 sm:h-12" alt="Flowbite Logo" />
