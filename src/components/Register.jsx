@@ -9,6 +9,8 @@ function Register() {
     password: ""
   })
 
+  const [err, setErr] = useState("")
+
   const dispatch = useDispatch();
   
   const changeHandler = (event) => {
@@ -17,8 +19,15 @@ function Register() {
     })
   }
 
-  const submitHandler = () => {
-
+  const submitHandler = async(event) => {
+    event.peventDefault();
+    try {
+      const res = await postUser(user);
+      dispatch({ type: 'REGISTER_USER', payload: res.data });  
+    } catch (error) {
+        setErr(error)
+    }
+      
   }
 
   return (
