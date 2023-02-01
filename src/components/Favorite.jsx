@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
-import getFavoriteList from "../redux/api";
+import getFavoriteList from "../redux/favorite/api";
+import ItemComponent from "./ItemComponent";
 
 const Favorite = () => {
   const dispatch = useDispatch();
@@ -12,12 +13,9 @@ const Favorite = () => {
 
   return(
   <div>
-    <h2>This is Favorite</h2>
-    {
-      Array.isArray(favoriteCar.favoriteCarList) ?
-      favoriteCar.favoriteCarList.map((car, index) => {
-        return <div key={index}>{car.model}</div>
-      }): null
+    <h2>This is Favorite </h2>
+    {favoriteCar.favoriteCarList && favoriteCar.favoriteCarList.length > 0 ? (
+        <ItemComponent carList={favoriteCar.favoriteCarList} />) : null
     }
   </div>
   )
