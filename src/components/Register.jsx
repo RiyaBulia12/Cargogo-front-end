@@ -22,7 +22,7 @@ function Register() {
   }
 
   const submitHandler = async(event) => {
-    event.peventDefault();
+    event.preventDefault();
     try {
       const res = await postUser(user);
       console.log(res)
@@ -41,6 +41,7 @@ function Register() {
           type="text"
           className="Name"
           placeholder="Name"
+          name="name"
           onChange={changeHandler}
         />
 
@@ -48,18 +49,21 @@ function Register() {
           type="text"
           className="Username"
           placeholder="Username"
+          name="username"
           onChange={changeHandler}
         />
         <input
           type="email"
           className="email"
           placeholder="Email Address"
+          name="email"
           onChange={changeHandler}
         />
         <input
           type="password"
           className="password"
           placeholder="Password"
+          name="password"
           onChange={changeHandler}
         />
         <div className="loginButton">
