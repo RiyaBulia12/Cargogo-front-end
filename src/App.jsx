@@ -7,12 +7,14 @@ import CarDetails from './components/CarDetails';
 import AddCar from './components/AddCar';
 import RentCar from './components/RentCar';
 import HomePage from './components/HomePage';
+import Register from './components/Register';
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/sign-up" element={<Register />} />
         <Route path="/details" element={<CarDetails />} />
         <Route path="/add" element={<AddCar />} />
         <Route path="/rent" element={<RentCar />} />

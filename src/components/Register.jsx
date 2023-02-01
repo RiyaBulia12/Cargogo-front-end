@@ -1,5 +1,7 @@
 import React from "react";
+import { useState } from "react";
 import {useDispatch} from "react-redux"
+import postUser from './../redux/user/api';
 
 function Register() {
   const [user, setUser] = useState({
@@ -23,6 +25,7 @@ function Register() {
     event.peventDefault();
     try {
       const res = await postUser(user);
+      console.log(res)
       dispatch({ type: 'REGISTER_USER', payload: res.data });  
     } catch (error) {
         setErr(error)
@@ -43,8 +46,8 @@ function Register() {
 
         <input
           type="text"
-          className="Name"
-          placeholder="Name"
+          className="Username"
+          placeholder="Username"
           onChange={changeHandler}
         />
         <input
