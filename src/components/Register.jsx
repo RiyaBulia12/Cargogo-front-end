@@ -1,13 +1,14 @@
 import React from "react";
 
 function Register() {
-  const [name, SetName] = useState("");
-  const [email, SetEmail] = useState("");
-  const [password, SetPassword] = useState("");
+  const [user, setUser] = useState({
+    name: "",
+    username: "",
+    email: "",
+    password: ""
+  })
 
-  const nameChangeHandler = (e) => {SetName(e.target.value);};
-  const emailChangeHandler = (e) => {SetEmail(e.target.value);};
-  const passwordChangeHandler = (e) => {SetPassword(e.target.value);};
+  
 
 
   const submitHandler = () => {
@@ -51,3 +52,15 @@ function Register() {
 }
 
 export default Register;
+
+
+
+
+
+
+
+
+
+
+
+
