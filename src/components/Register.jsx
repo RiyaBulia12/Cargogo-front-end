@@ -5,7 +5,15 @@ function Register() {
   const [email, SetEmail] = useState("");
   const [password, SetPassword] = useState("");
 
-git 
+  const nameChangeHandler = (e) => {SetName(e.target.value);};
+  const emailChangeHandler = (e) => {SetEmail(e.target.value);};
+  const passwordChangeHandler = (e) => {SetPassword(e.target.value);};
+
+
+  const submitHandler = () => {
+
+  }
+
   return (
     <div>
       Register
