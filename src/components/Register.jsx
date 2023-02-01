@@ -1,4 +1,5 @@
 import React from "react";
+import {useDispatch} from "react-redux"
 
 function Register() {
   const [user, setUser] = useState({
@@ -8,8 +9,13 @@ function Register() {
     password: ""
   })
 
+  const dispatch = useDispatch();
   
-
+  const changeHandler = (event) => {
+    setUser({
+      ...user, [event.target.name]: event.target.value,
+    })
+  }
 
   const submitHandler = () => {
 
@@ -23,19 +29,26 @@ function Register() {
           type="text"
           className="Name"
           placeholder="Name"
-          onChange={nameChangeHandler}
+          onChange={changeHandler}
+        />
+
+        <input
+          type="text"
+          className="Name"
+          placeholder="Name"
+          onChange={changeHandler}
         />
         <input
           type="email"
           className="email"
           placeholder="Email Address"
-          onChange={emailChangeHandler}
+          onChange={changeHandler}
         />
         <input
           type="password"
           className="password"
           placeholder="Password"
-          onChange={passwordChangeHandler}
+          onChange={changeHandler}
         />
         <div className="loginButton">
           <p>
