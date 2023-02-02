@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const ItemComponent = ({ carList, title }) => {
   return (
@@ -16,6 +17,11 @@ const ItemComponent = ({ carList, title }) => {
                         <h1 className="xxs:text-[11px] xs:text-[15px] xxs:leading-3 xs:leading-4 sm:text-xl md:text-base lg:text-lg xl:text-2xl">{car.model}</h1>
                         <h2 className="xxs:text-[9px] xs:text-[12px] xxs:leading-3 xs:leading-4 sm:text-lg md:text-sm lg:text-base xl:text-xl">{car.price}</h2>
                         <h2 className="xxs:text-[7px] xs:text-[10px] xxs:leading-3 xs:leading-4 sm:text-base md:text-xs lg:text-sm xl:text-base">{car.color}</h2>
+                        {title === 'Cars'? (
+                        <div className="mt-8 ">
+                          <Link to="/details" className="bg-gray-900 opacity-100 py-2 px-4 rounded-md text-[7px]">Read More</Link>
+                        </div>):
+                        null}
                       </div>
                     </div>
                   </div>
