@@ -7,6 +7,7 @@ import CarList from './components/CarList';
 import AddCar from './components/AddCar';
 import RentCar from './components/RentCar';
 import HomePage from './components/HomePage';
+import CarDetails from './components/CarDetails';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/cars" element={<CarList />} />
         <Route path="/add" element={<AddCar />} />
+        <Route path="/details" element={<CarDetails />} />
         <Route path="/rent" element={<RentCar />} />
         <Route path="/favorite" element={<Favorite />} />
         <Route path="/delete" element={<DeleteCar />} />
