@@ -14,7 +14,7 @@ const Favorite = () => {
   return(
   <div>
     {favoriteCar.favoriteCarList && favoriteCar.favoriteCarList.length > 0 ? (
-        <ItemComponent carList={favoriteCar.favoriteCarList} />) : null
+        <ItemComponent carList={favoriteCar.favoriteCarList} title={"Cars you loved the most"}/>) : null
     }
   </div>
   )
