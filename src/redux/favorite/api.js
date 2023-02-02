@@ -1,12 +1,11 @@
 const baseUrl = 'https://cargogo-backend-production.up.railway.app/api/v1/';
-const localUrl = 'http://localhost:3000/api/v1/';
 
 const getFavoriteList = () => async (dispatch) => {
-  const favoriteResponse = await fetch(`${localUrl}users/1/favorites`);
+  const favoriteResponse = await fetch(`${baseUrl}users/1/favorites`);
   const favoriteData = await favoriteResponse.json();
 
   const carPromise = favoriteData.map(async (cars) => {
-    const carResponse = await fetch(`${localUrl}cars/${cars.id}`);
+    const carResponse = await fetch(`${baseUrl}cars/${cars.id}`);
     return carResponse.json();
   });
 
