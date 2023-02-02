@@ -12,8 +12,8 @@ const Favorite = () => {
   }, [dispatch]);
 
   return(
+
   <div>
-    <h2>This is Favorite </h2>
     {favoriteCar.favoriteCarList && favoriteCar.favoriteCarList.length > 0 ? (
         <ItemComponent carList={favoriteCar.favoriteCarList} />) : null
     }
