@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 
 export default function HomePage() {
@@ -15,9 +16,9 @@ export default function HomePage() {
             <span>get around, allowing you to explore your destination with ease</span>
             <span>and freedom.</span>
           </h3>
-          <button type="button" className="bg-red-700 text-white font-bold rounded-full shadow-lg uppercase tracking-wider md:text-base md:py-4 md:px-8 xs:py-2 xs:px-6 xs:text-[12px] xs:mt-1">
+          <Link to="/cars" type="button" className="bg-red-700 text-white font-bold rounded-full shadow-lg uppercase tracking-wider md:text-base md:py-4 md:px-8 xs:py-2 xs:px-6 xs:text-[12px] xs:mt-1">
             View Cars
-          </button>
+          </Link>
         </div>
       </div>
     </div>
