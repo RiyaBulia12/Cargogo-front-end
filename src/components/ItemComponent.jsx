@@ -12,10 +12,10 @@ const ItemComponent = ({ carList, title }) => {
                   <div className="group relative overflow-hidden rounded-xl shadow-xl" key={car.id}>
                     <div className="h-full w-full group-hover:scale-125 transform transition-all duration-300">
                       <img src={`${car.image}`} className="h-full w-full bg-rose-50/[30] opacity-80" alt={car.model} />
-                      <div className="h-full w-full absolute text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 hover:opacity-100 transition-all ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 font-black p-2" style={{color: 'white', textShadow: "#000 0px 0px 4px, #000 0px 0px 11px, #000 0px 0px 19px, #000 0px 0px 40px, #000 0px 0px 0px, #000 0px 0px 0px, #000 0px 0px 0px, #000 0px 0px 0px"}}>
-                        <h1 className="md:text-base lg:text-lg xl:text-2xl tracking-widest text-center uppercase">{car.model}</h1>
-                        <h2 className="md:text-sm lg:text-base xl:text-xl text-center tracking-widest uppercase">{car.price}</h2>
-                        <h2 className="md:text-xs lg:text-sm xl:text-base text-center tracking-widest uppercase">{car.color}</h2>
+                      <div className="h-full w-full absolute text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 hover:opacity-100 transition-all ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 font-black p-2  text-center tracking-widest uppercase" style={{color: 'white', textShadow: "#000 0px 0px 4px, #000 0px 0px 11px, #000 0px 0px 19px, #000 0px 0px 40px, #000 0px 0px 0px, #000 0px 0px 0px, #000 0px 0px 0px, #000 0px 0px 0px"}}>
+                        <h1 className="xxs:text-[11px] xs:text-[15px] xxs:leading-3 xs:leading-4 sm:text-xl md:text-base lg:text-lg xl:text-2xl">{car.model}</h1>
+                        <h2 className="xxs:text-[9px] xs:text-[12px] xxs:leading-3 xs:leading-4 sm:text-lg md:text-sm lg:text-base xl:text-xl">{car.price}</h2>
+                        <h2 className="xxs:text-[7px] xs:text-[10px] xxs:leading-3 xs:leading-4 sm:text-base md:text-xs lg:text-sm xl:text-base">{car.color}</h2>
                       </div>
                     </div>
                   </div>
