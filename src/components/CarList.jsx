@@ -9,7 +9,7 @@ const CarList = () => {
     const cars = useSelector((state) => state.cars);
     useEffect(() => {
       dispatch(getCarList());
-    }, []);
+    }, [dispatch]);
   
     const scrollRight = () => {
       const container = document.querySelector('.scroll_content');
@@ -39,13 +39,13 @@ const CarList = () => {
           </p>
         </div>
   
-        {cleaners.hasErrors && (
+        {cars.hasErrors && (
           <div className="error">
             Unable to display cars . Please check your server.
           </div>
         )}
   
-        {!cleaners.loading && !cars.hasErrors && (
+        {!cars.loading && !cars.hasErrors && (
           <div className="content_div">
             <div className="arrow_div">
               <button type="button" className="arrow left" onClick={scrollLeft}>
