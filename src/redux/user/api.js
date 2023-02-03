@@ -6,5 +6,5 @@ export const postUser = async (user) =>{
 }
 
 export const getUser = async(userlogin) => {
-    return await axios.post(`${baseUrl}userlogin`, userlogin)
+    return await axios.post(`${baseUrl}users/login`, userlogin)
 }

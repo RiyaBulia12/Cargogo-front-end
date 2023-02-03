@@ -71,7 +71,7 @@ function Register() {
           <p>
             Already have an account?
             <span>
-              <a href="/Login">Sign in</a>
+              <a href="/sign-in">Sign in</a>
             </span>
           </p>
           <button type="submit">Sign Up</button>

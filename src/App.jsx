@@ -9,6 +9,7 @@ import RentCar from './components/RentCar';
 import HomePage from './components/HomePage';
 import Register from './components/Register';
 import Login from './components/Login';
+import CarDetails from './components/CarDetails';
 
 function App() {
   return (
@@ -18,8 +19,8 @@ function App() {
         <Route path="/sign-up" element={<Register />} />
         <Route path="/sign-in" element={<Login />} />
         <Route path="/details" element={<CarDetails />} />
+        <Route path="/details" element={<CarList />} />
         <Route path="/add" element={<AddCar />} />
-        <Route path="/details" element={<CarDetails />} />
         <Route path="/rent" element={<RentCar />} />
         <Route path="/favorite" element={<Favorite />} />
         <Route path="/delete" element={<DeleteCar />} />

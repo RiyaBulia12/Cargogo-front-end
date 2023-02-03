@@ -9,13 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@reduxjs/toolkit": "^1.9.1",
     "axios": "^1.3.0",
-=======
     "@reduxjs/toolkit": "^1.9.2",
     "async": "^3.2.4",
->>>>>>> 156c167c197f49410e5250e39eb4409e12a2353e
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",

@@ -50,6 +50,7 @@ function Login() {
           name="password"
           onChange={changeHandler}
         />
+         <button type="submit">Sign in</button>
     </form>
   </div>
   )
