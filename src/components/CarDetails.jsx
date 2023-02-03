@@ -1,9 +1,23 @@
 import React from 'react';
+import baseUrl from '../redux/baseUrl';
 
-const CarDetails = () => (
-  <div>
-    <h2>Detail of [Car Name] </h2>
-  </div>
-);
+function CarDetails() {
 
-export default CarDetails;
+  const url = `${baseUrl}/cars/${params.id}`
+  const [data, setData] = useState([]) 
+
+  useEffect(()=>{
+    axios.get(url)
+      .then(response => {
+        console.log(response.data.data);
+        setData(response.data.data)
+      })
+  }, [url])
+
+  
+  return (
+    <div>CarDetails</div>
+  )
+}
+
+export default CarDetails
