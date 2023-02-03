@@ -25,6 +25,7 @@ function Register() {
     event.preventDefault();
     try {
       const res = await postUser(user);
+      console.log(postUser)
       console.log(res)
       dispatch({ type: 'REGISTER_USER', payload: res.data });  
     } catch (error) {

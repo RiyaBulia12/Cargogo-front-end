@@ -1,17 +1,58 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { getUser } from '../redux/user/api'
 
-function login() {
+function Login() {
+  const [userlogin, setUserlogin] = useState({
+    username: "",
+    password: ""
+  })
+
+  const [err, setErr] = useState("")
+
+  const dispatch = useDispatch();
+  
+  const changeHandler = (event) => {
+    setUserlogin({
+      ...userlogin, [event.target.name]: event.target.value,
+    })
+  }
+
+  const submitHandler = async(event) => {
+    event.preventDefault();
+    try {
+      const res = await getUser(userlogin);
+      console.log(userlogin)
+      console.log(res)
+      dispatch({ type: 'REGISTER_USER', payload: res.data });  
+    } catch (error) {
+        setErr(error)
+    }
+      
+  }
+
   return (
-    <div>login
-      <label>Username</label>
-      <input
+    <div>
+      Login
+      <form onSubmit={submitHandler}>
+        <input
           type="text"
-          className="Name"
-          placeholder="Name"
-          onChange={nameChangeHandler}
+          className="Username"
+          placeholder="Username"
+          name="username"
+          onChange={changeHandler}
         />
-    </div>
+
+        <input
+          type="password"
+          className="Password"
+          placeholder="Password"
+          name="password"
+          onChange={changeHandler}
+        />
+    </form>
+  </div>
   )
 }
 
-export default login
+export default Login
