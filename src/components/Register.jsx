@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import {useDispatch} from "react-redux"
-import postUser from './../redux/user/api';
+import { postUser } from './../redux/user/api';
 
 function Register() {
   const [user, setUser] = useState({
