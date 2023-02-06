@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { getUser } from '../redux/user/api';
 
 function Login() {
@@ -8,9 +9,8 @@ function Login() {
     password: ""
   })
 
-  const [err, setErr] = useState("")
-
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   
   const changeHandler = (event) => {
     setUserlogin({
@@ -22,11 +22,11 @@ function Login() {
     event.preventDefault();
     try {
       const res = await getUser(userlogin);
-      console.log(userlogin)
-      console.log(res)
-      dispatch({ type: 'REGISTER_USER', payload: res.data });  
+      dispatch({ type: 'LOGIN_USER', payload: res.data });
+      navigate('/')
+
     } catch (error) {
-        setErr(error)
+      console.log(error)
     }
       
   }
@@ -50,7 +50,7 @@ function Login() {
           name="password"
           onChange={changeHandler}
         />
-         <button  className='bg-sky-500 hover:bg-sky-700 ' type="submit">Sign in</button>
+         <button  className='bg-sky-500 hover:bg-sky-700' type="submit">Sign in</button>
     </form>
   </div>
   )
