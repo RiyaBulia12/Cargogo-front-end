@@ -50,7 +50,7 @@ function Login() {
           name="password"
           onChange={changeHandler}
         />
-         <button type="submit">Sign in</button>
+         <button  className='bg-sky-500 hover:bg-sky-700 ' type="submit">Sign in</button>
     </form>
   </div>
   )
