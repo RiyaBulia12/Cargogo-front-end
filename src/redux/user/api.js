@@ -6,5 +6,5 @@ export const postUser = async (user) => (
 );
 
 export const getUser = async (userlogin) => (
-     axios.post(`${baseUrl}users/login`, userlogin)
-    );
+  axios.post(`${baseUrl}users/login`, userlogin)
+);
