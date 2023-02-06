@@ -5,7 +5,6 @@ const initialState = [];
 export const getCarList = () => async (dispatch) => {
   const carResponse = await fetch(`${baseUrl}cars`);
   const carData = await carResponse.json();
-  console.log(carData);
   dispatch({ type: 'GET_CAR_LIST', payload: carData });
 };
 
