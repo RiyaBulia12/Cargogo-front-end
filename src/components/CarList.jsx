@@ -1,8 +1,7 @@
 import React, {useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from 'react-router-dom';
-import { BiRightArrow, BiLeftArrow } from 'react-icons/bi';
 import {getCarList} from "../redux/cars/reducer";
+import ItemComponent from "./ItemComponent"
 
 const CarList = () => {
     const dispatch = useDispatch();
@@ -31,76 +30,19 @@ const CarList = () => {
     };
   
     return (
-      <div className="cleaners_sect">
-        <div>
-          <p className="page_title">
-            <span className="available_docs">Cars</span>
-            <span className="select">Please select your cars</span>
-          </p>
-        </div>
-  
+      <>
         {cars.hasErrors && (
           <div className="error">
             Unable to display cars . Please check your server.
           </div>
         )}
-  
-        {!cars.loading && !cars.hasErrors && (
-          <div className="content_div">
-            <div className="arrow_div">
-              <button type="button" className="arrow left" onClick={scrollLeft}>
-                <BiLeftArrow className="left_arrow" />
-              </button>
-            </div>
-            <div className="cover_div">
-              <div className="scroll_content">
-                {cars.map((car) => (
-                  <div key={car.id} className="cleaners_div">
-                    <Link to={`/cleaners/${car.id}`}>
-                      <img
-                        className="cleaners_img"
-                        src={car.image}
-                        alt={car.name}
-                      />
-                    </Link>
-                    <h2 className="cleaners_name">{car.model}</h2>
-                    <p className="specialization">
-                      cost of car :
-                      {car.price}
-                      dollars
-                    </p>
-                    <p className="specialization">
-                      car color :
-                      {car.color}
-                    </p>
 
-                    <p className="specialization">
-                     description :
-                      {car.description}
-                    </p>
 
-                    <p className="specialization">
-                     production_date :
-                      {car.production_date}
-                    </p>
-                    
-                    <p className="specialization">
-                      brand :
-                      {car.brand}
-                    </p>
+        {!cars.loading && !cars.hasErrors &&
+          cars && cars.length > 0 ? (
+          <ItemComponent carList={cars} title={"Cars"}/>) : null}
+    </>
 
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <button type="button" className="arrow right" onClick={scrollRight}>
-                <BiRightArrow />
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
     );
   };
 
