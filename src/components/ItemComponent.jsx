@@ -19,7 +19,7 @@ const ItemComponent = ({ carList, title }) => {
                         <h2 className="xxs:text-[7px] xs:text-[10px] xxs:leading-3 xs:leading-4 sm:text-base md:text-xs lg:text-sm xl:text-base">{car.color}</h2>
                         {title === 'Cars'? (
                         <div className="mt-8 ">
-                          <Link to="/details" className="bg-gray-900 opacity-100 py-2 px-4 rounded-md text-[7px]">Read More</Link>
+                          <Link to={`/details/${car.id}`} className="bg-gray-900 opacity-100 py-2 px-4 rounded-md text-[7px]">Read More</Link>
                         </div>):
                         null}
                       </div>

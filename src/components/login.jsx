@@ -1,35 +1,35 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
-import { getUser } from '../redux/user/api';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { getUser } from "../redux/user/api";
 
 function Login() {
   const [userlogin, setUserlogin] = useState({
     username: "",
-    password: ""
-  })
+    password: "",
+  });
 
-  const [err, setErr] = useState("")
-
+  const [err, setErr] = useState("");
   const dispatch = useDispatch();
-  
+  const navigate = useNavigate();
+
   const changeHandler = (event) => {
     setUserlogin({
-      ...userlogin, [event.target.name]: event.target.value,
-    })
-  }
+      ...userlogin,
+      [event.target.name]: event.target.value,
+    });
+  };
 
-  const submitHandler = async(event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
-    try {
-      const res = await getUser(userlogin);
-      console.log(userlogin)
-      console.log(res)
-      dispatch({ type: 'REGISTER_USER', payload: res.data });  
-    } catch (error) {
-        setErr(error)
+    const res = await getUser(userlogin);
+    dispatch({ type: "LOGIN_USER", payload: res.data });
+    if (res.data.error.lenght > 0) {
+      setErr(res.data.error);
+    } else {
+      navigate("/");
     }
-      
-  }
+  };
 
   return (
     <div>
@@ -50,10 +50,12 @@ function Login() {
           name="password"
           onChange={changeHandler}
         />
-         <button type="submit">Sign in</button>
-    </form>
-  </div>
-  )
+        <button className="bg-sky-500 hover:bg-sky-700" type="submit">
+          Sign in
+        </button>
+      </form>
+    </div>
+  );
 }
 
-export default Login
+export default Login;

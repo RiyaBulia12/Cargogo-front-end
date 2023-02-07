@@ -23,15 +23,11 @@ function Register() {
 
   const submitHandler = async(event) => {
     event.preventDefault();
-    try {
-      const res = await postUser(user);
-      console.log(postUser)
-      console.log(res)
-      dispatch({ type: 'REGISTER_USER', payload: res.data });  
-    } catch (error) {
-        setErr(error)
-    }
-      
+    const res = await postUser(user);
+    dispatch({ type: 'REGISTER_USER', payload: res.data });
+    if (res.data.error.lenght > 0) {
+      setErr(res.data.error)
+    }   
   }
 
   return (
@@ -75,6 +71,9 @@ function Register() {
             </span>
           </p>
           <button type="submit">Sign Up</button>
+        </div>
+        <div className="error">
+          {err && err.map((err) => { return err })}
         </div>
       </form>
     </div>

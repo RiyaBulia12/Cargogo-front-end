@@ -1,7 +1,7 @@
 import React from 'react';
 import baseUrl from '../redux/baseUrl';
 
-function CarDetails() {
+function CarDetails({params}) {
 
   const url = `${baseUrl}/cars/${params.id}`
   const [data, setData] = useState([]) 
