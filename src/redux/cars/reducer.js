@@ -1,4 +1,3 @@
-import axios from "axios";
 const baseUrl = 'https://cargogo-backend-production.up.railway.app/api/v1/';
 const GET_CAR_LIST = 'GET_CAR_LIST';
 const ADD_CAR = 'ADD_CAR';
@@ -7,7 +6,6 @@ const initialState = [];
 export const getCarList = () => async (dispatch) => {
   const carResponse = await fetch(`${baseUrl}cars`);
   const carData = await carResponse.json();
-  console.log(carData);
   dispatch({ type: 'GET_CAR_LIST', payload: carData });
 };
 
