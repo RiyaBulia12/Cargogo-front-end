@@ -1,8 +1,10 @@
 import React from 'react';
+import { useParams } from "react-router-dom";
 import baseUrl from '../redux/baseUrl';
 
 function CarDetails({params}) {
 
+  const params = useParams();
   const url = `${baseUrl}/cars/${params.id}`
   const [data, setData] = useState([]) 
 
