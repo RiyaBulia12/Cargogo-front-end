@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addcar } from '../redux/cars/reducer';
-
+import './addcar.css';
 
 const Addcar = () => {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const Addcar = () => {
     model: '',
     price: '',
     color: '',
-    photo: '',
+    image: '',
     description: '',
     production_date: '',
 
@@ -28,7 +28,7 @@ const Addcar = () => {
       model: car.model,
       price: car.price,
       color: car.color,
-      photo: car.photo,
+      image: car.image,
       description: car.description,
       production_date: car.production_date
 
@@ -39,28 +39,31 @@ const Addcar = () => {
       model: '',
       price: '',
       color: '',
-      photo: '',
+      image: '',
       description: ' ',
       production_date: ''
     });
   };
   return (
     <form onSubmit={handleChange} className="add-form">
-      <h2> add a new car.</h2>
-      <input
+      <h2> ADD A CAR </h2>
+      <input  class="placeholder:italic placeholder:text-slate-400 block bg-white border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
         type="text"
+        required 
         placeholder="Brand"
         value={car.brand}
         onChange={(e) => setCar({ ...car, brand: e.target.value })}
       />
       <input
         type="text"
+        required 
         placeholder="model"
         value={car.model}
         onChange={(e) => setCar({ ...car, model: e.target.value })}
       />
       <input
         type="integer"
+        required 
         placeholder="the cost of the car"
         value={car.price}
         onChange={(e) => setCar({ ...car, price: e.target.value })}
@@ -68,17 +71,20 @@ const Addcar = () => {
       <input
         type="text"
         placeholder="color"
+        required 
         value={car.color}
         onChange={(e) => setCar({ ...car, color: e.target.value })}
       />
       <input
         type="text"
-        placeholder="Photo"
-        value={car.photo}
-        onChange={(e) => setCar({ ...car, photo: e.target.value })}
+        required 
+        placeholder="image"
+        value={car.image}
+        onChange={(e) => setCar({ ...car, image: e.target.value })}
       />
         <input
         type="text"
+        required 
         placeholder="description"
         value={car.description}
         onChange={(e) => setCar({ ...car, description: e.target.value })}
@@ -86,6 +92,7 @@ const Addcar = () => {
 
       <input
         type="text"
+        required 
         placeholder="production_date"
         value={car.production_date}
         onChange={(e) => setCar({ ...car, production_date: e.target.value })}
