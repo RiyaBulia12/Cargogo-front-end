@@ -1,4 +1,5 @@
-const baseUrl = 'https://cargogo-backend-production.up.railway.app/api/v1/';
+import baseUrl from '../baseUrl';
+
 const GET_CAR_LIST = 'GET_CAR_LIST';
 const initialState = [];
 
