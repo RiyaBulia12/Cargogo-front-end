@@ -1,8 +1,9 @@
-import React from 'react';
+import {useState, useEffect} from 'react';
 import { useParams } from "react-router-dom";
+import axios from 'axios';
 import baseUrl from '../redux/baseUrl';
 
-function CarDetails({params}) {
+function CarDetails() {
 
   const params = useParams();
   const url = `${baseUrl}/cars/${params.id}`
@@ -11,14 +12,18 @@ function CarDetails({params}) {
   useEffect(()=>{
     axios.get(url)
       .then(response => {
-        console.log(response.data);
-        setData(response.data.data)
+        setData(response.data)
       })
   }, [url])
 
   
   return (
-    <div>CarDetails</div>
+    <div>
+      <h1>Car Details</h1>
+      <h2>{data.model}</h2>
+      <h2>{data.color}</h2>
+      <p>{data.description}</p>
+    </div>
   )
 }
 
