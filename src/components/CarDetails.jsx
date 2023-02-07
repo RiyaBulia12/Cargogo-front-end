@@ -12,6 +12,7 @@ function CarDetails() {
   useEffect(()=>{
     axios.get(url)
       .then(response => {
+        console.log(response.data)
         setData(response.data)
       })
   }, [url])
@@ -20,9 +21,12 @@ function CarDetails() {
   return (
     <div>
       <h1>Car Details</h1>
+      <img src={data.image}/>
       <h2>{data.model}</h2>
       <h2>{data.color}</h2>
+      <h2>{data.price}</h2>
       <p>{data.description}</p>
+      <button>Add to Favorite</button>
     </div>
   )
 }
