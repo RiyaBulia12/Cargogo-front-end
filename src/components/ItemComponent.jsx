@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { handleDelete } from '../redux/cars/reducer';
 
 const ItemComponent = ({ carList, title }) => (
   <div className="p-[2.5rem] sm:p-[3.5rem] md:p-[60px] bg-slate-50 h-screen transform transition-all ">
@@ -23,7 +24,7 @@ const ItemComponent = ({ carList, title }) => (
                     : null}
                   {title === 'Pick the car you want to delete' ? (
                     <div className="mt-8 ">
-                      <button type="button" className="bg-gray-900 opacity-100 py-2 px-4 rounded-md text-[7px]">Delete Car</button>
+                      <button type="button" onClick={() => handleDelete(car.id)} className="bg-gray-900 opacity-100 py-2 px-4 rounded-md text-[7px]">Delete Car</button>
                     </div>
                   )
                     : null}
