@@ -21,6 +21,12 @@ const ItemComponent = ({ carList, title }) => (
                     </div>
                   )
                     : null}
+                  {title === 'Pick the car you want to delete' ? (
+                    <div className="mt-8 ">
+                      <button type="button" className="bg-gray-900 opacity-100 py-2 px-4 rounded-md text-[7px]">Delete Car</button>
+                    </div>
+                  )
+                    : null}
                 </div>
               </div>
             </div>
