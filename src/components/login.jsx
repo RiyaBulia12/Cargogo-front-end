@@ -24,8 +24,9 @@ function Login() {
     event.preventDefault();
     const res = await getUser(userlogin);
     dispatch({ type: "LOGIN_USER", payload: res.data });
-    if (res.data.error.lenght > 0) {
-      setErr(res.data.error);
+
+    if (res.error) {
+      setErr(res.error);
     } else {
       navigate("/");
     }
@@ -53,6 +54,16 @@ function Login() {
         <button className="bg-sky-500 hover:bg-sky-700" type="submit">
           Sign in
         </button>
+        {err &&
+          <div role="alert">
+            <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+              Error
+            </div>
+            <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
+              <p>{err}</p>
+            </div>
+          </div>
+        }
       </form>
     </div>
   );
