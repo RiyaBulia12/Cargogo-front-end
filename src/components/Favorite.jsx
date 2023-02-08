@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
-import getFavoriteList from "../redux/favorite/api";
+import {getFavoriteList} from "../redux/favorite/api";
 import ItemComponent from "./ItemComponent";
 
 const Favorite = () => {
