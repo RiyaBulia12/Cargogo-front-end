@@ -33,7 +33,18 @@ function CarDetails() {
             {data.model}
           </h1>
         </div>
-
+        <div>
+          <h3 className="mt-2 font-semibold">About this listing</h3>
+          <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 mt-3 mb-1">
+            <span>Price: </span>
+            $
+            {data.price}
+          </p>
+          <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 mb-10">
+            <span>Model: </span>
+            {data.description}
+          </p>
+        </div>
         <button
           type="button"
           className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-base flex items-center justify-center leading-none text-white bg-red-700 w-full py-4 hover:bg-gray-700"
