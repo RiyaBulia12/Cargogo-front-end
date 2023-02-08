@@ -11,6 +11,9 @@ export const getCarList = () => async (dispatch) => {
   dispatch({ type: 'GET_CAR_LIST', payload: carData });
 };
 
+export const handleDelete = (itemId) => async (dispatch) => {
+};
+
 export const addcar = (car) => (dispatch) => {
   axios
     .post('https://cargogo-backend-production.up.railway.app/api/v1/cars', car)
