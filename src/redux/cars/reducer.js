@@ -12,6 +12,9 @@ export const getCarList = () => async (dispatch) => {
 };
 
 export const handleDelete = (itemId) => async (dispatch) => {
+  const carResponse = await fetch(`${baseUrl}cars/${itemId}`, {
+    method: 'DELETE',
+  });
 };
 
 export const addcar = (car) => (dispatch) => {
