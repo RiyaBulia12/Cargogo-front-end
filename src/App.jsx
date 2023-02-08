@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Favorite from './components/Favorite';
 import DeleteCar from './components/DeleteCar';
 import NotFound from './components/404/NotFound';
@@ -10,10 +10,15 @@ import HomePage from './components/HomePage';
 import Register from './components/Register';
 import Login from './components/login';
 import CarDetails from './components/CarDetails';
+import Navbar from './components/Navbar';
 
 function App() {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   return (
     <div className="App">
+      {isHomePage ? null : <Navbar />}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/sign-up" element={<Register />} />
