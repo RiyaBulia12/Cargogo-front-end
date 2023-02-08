@@ -6,7 +6,7 @@ const getFavoriteList = () => async (dispatch) => {
   const favoriteData = await favoriteResponse.json();
 
   const carPromise = favoriteData.map(async (favorites) => {
-    const carResponse = await fetch(`${baseUrl}cars//${favorites.car_id}`);
+    const carResponse = await fetch(`${baseUrl}cars/${favorites.car_id}`);
     return carResponse.json();
   });
 
@@ -16,4 +16,20 @@ const getFavoriteList = () => async (dispatch) => {
   dispatch({ type: 'FAVORITE_LIST', payload: favoriteData });
 };
 
-export default getFavoriteList;
+const addToFavorite = (carId) => async (dispatch) => {
+  const user = JSON.parse(localStorage.getItem('userInfo'));
+  const favoriteResponse = await fetch(`${baseUrl}users/${user.id}/favorites`,
+    {
+      method: 'POST',
+      headers: { 'Content-type': 'application/json; charset=UTF-8' },
+      body: JSON.stringify({ car_id: carId, user_id: user.id }),
+    });
+  const favoriteData = await favoriteResponse.json();
+
+  if (!favoriteData.error) {
+    dispatch({ type: 'ADD_FAVORITE_CAR', payload: favoriteData });
+  }
+  return favoriteData;
+};
+
+export { getFavoriteList, addToFavorite };
