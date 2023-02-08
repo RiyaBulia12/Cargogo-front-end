@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 const baseUrl = 'https://cargogo-backend-production.up.railway.app/api/v1/';
 const GET_CAR_LIST = 'GET_CAR_LIST';
 const ADD_CAR = 'ADD_CAR';
