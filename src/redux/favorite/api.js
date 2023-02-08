@@ -22,9 +22,8 @@ const addToFavorite = (carId) => async (dispatch) => {
     {
       method: 'POST',
       headers: { 'Content-type': 'application/json; charset=UTF-8' },
-      body: JSON.stringify({ car_id: carId, user_id: user.id })
-    }
-  );
+      body: JSON.stringify({ car_id: carId, user_id: user.id }),
+    });
   const favoriteData = await favoriteResponse.json();
 
   if (!favoriteData.error) {
@@ -33,5 +32,4 @@ const addToFavorite = (carId) => async (dispatch) => {
   return favoriteData;
 };
 
-
-export {getFavoriteList, addToFavorite};
+export { getFavoriteList, addToFavorite };
