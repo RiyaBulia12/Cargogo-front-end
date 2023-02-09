@@ -4,7 +4,6 @@ import { handleDelete } from '../redux/cars/reducer';
 
 const ItemComponent = ({ carList, title }) => (
   <div className="p-[2.5rem] sm:p-[3.5rem] md:p-[60px] bg-slate-50 h-screen transform transition-all ">
-    <h1 className=" text-center text-black text-xl font-sans tracking-wider">{title}</h1>
     <div className="flex items-center justify-center">
       <div className="">
         <div className="mt-8 grid grid-cols-2 gap-2 rounded-xl bg-white p-2 md:grid-cols-3 lg:grid-cols-4 w-full">
