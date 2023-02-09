@@ -28,7 +28,8 @@ function Login() {
     if (res.error) {
       setErr(res.error);
     } else {
-      navigate("/");
+      navigate("/cars");
+      window.location.reload();
     }
   };
 
