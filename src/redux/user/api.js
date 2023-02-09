@@ -9,6 +9,10 @@ export const postUser = async (user) => {
   return response.data;
   };
 
-export const getUser = async (userlogin) => (
-  axios.post(`${baseUrl}users/login`, userlogin)
-);
+export const getUser = async (userlogin) => {
+  const response = await axios.post(`${baseUrl}users/login`, userlogin).then((res) => {
+    localStorage.setItem('userInfo', JSON.stringify(res.data.data));
+    return res;
+  });
+  return response.data;
+};

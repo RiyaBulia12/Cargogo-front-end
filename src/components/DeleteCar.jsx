@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCarList } from '../redux/cars/reducer';
+import ItemComponent from './ItemComponent';
 
-const DeleteCar = () => (
+const DeleteCarList = () => {
+  const dispatch = useDispatch();
+  const cars = useSelector((state) => state.cars);
+  useEffect(() => {
+    dispatch(getCarList());
+  }, [dispatch]);
 
-  
-  <div>
-    <h2>Delete Car</h2>
+  return (
+    <>
+      {cars.hasErrors && (
+      <div className="error">
+        Unable to display cars. Please check your server.
+      </div>
+      )}
 
-  </div>
-);
+      {!cars.loading && !cars.hasErrors
+          && cars && cars.length > 0 ? (
+            <ItemComponent carList={cars} title="Pick the car you want to delete" />) : null}
+    </>
 
-export default DeleteCar;
+  );
+};
+
+export default DeleteCarList;

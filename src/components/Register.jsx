@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {useNavigate} from "react-router-dom"
 import { postUser } from "./../redux/user/api";
-import logo from "../assets/cargogo-logo.png";
+import logo from "../assets/cargogo_logo.png";
 
 function Register() {
   const [user, setUser] = useState({

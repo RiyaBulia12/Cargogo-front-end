@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import logo from '../assets/cargogo-logo.png';
+import logo from '../assets/cargogo_logo.png';
 
 export default function Navbar() {
   const [showSidebar, setSidebar] = useState(false);
