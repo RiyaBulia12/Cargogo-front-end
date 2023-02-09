@@ -12,6 +12,7 @@ export default function Navbar() {
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
   const pos = isHomePage ? 'absolute' : 'relative';
+  const menuTextColor = isHomePage ? 'text-white' : 'text-gray-700';
 
   const logout = () => {
     localStorage.removeItem('userInfo');
@@ -21,7 +22,7 @@ export default function Navbar() {
 
 
   return (
-    <nav className={`md:px-10 md:py-6 md:mx-8 p-4 w-full ${pos}`}>
+    <nav className={`md:px-10 md:py-6 p-4 w-full ${pos}`}>
       <div className="container px-4 flex flex-wrap items-center justify-between mx-auto">
         <Link to="/" className="flex items-center">
           <img src={logo} className="h-7 mr-1 sm:h-12" alt="CarGoGo Logo" />
@@ -37,7 +38,7 @@ export default function Navbar() {
               x
             </button>
           ) : (
-            <button onClick={() => setSidebar(!showSidebar)} data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 md:hidden focus:outline-none dark:text-gray-400" aria-controls="navbar-default" aria-expanded="false">
+            <button onClick={() => setSidebar(!showSidebar)} data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-700 md:hidden focus:outline-none" aria-controls="navbar-default" aria-expanded="false">
               <span className="sr-only">Open sidebar</span>
               <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" /></svg>
             </button>
@@ -50,28 +51,28 @@ export default function Navbar() {
               {!isUserLoggedIn ? (
                 <>
                 <li>
-                  <Link to="/sign-in" className="block py-2 pl-3 pr-4 text-base text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Sign in</Link>
+                  <Link to="/sign-in" className="block py-2 pl-3 pr-4 text-base text-gray-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0">Sign in</Link>
                 </li>
                 <li>
-                  <Link to="/sign-up" className="block py-2 pl-3 pr-4 text-base text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Sign up</Link>
+                  <Link to="/sign-up" className="block py-2 pl-3 pr-4 text-base text-gray-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0">Sign up</Link>
                 </li>
                 </>
               ) : (
                 <>
                 <li>
-                  <Link to="/cars" className="block py-2 pl-3 pr-4 text-base text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Cars</Link>
+                  <Link to="/cars" className="block py-2 pl-3 pr-4 text-base text-gray-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0">Cars</Link>
                 </li>
                 <li>
-                  <Link to="/add" className="block py-2 pl-3 pr-4 text-base text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Add Car</Link>
+                  <Link to="/add" className="block py-2 pl-3 pr-4 text-base text-gray-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0">Add Car</Link>
                 </li>
                 <li>
-                  <Link to="/delete" className="block py-2 pl-3 pr-4 text-base text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Delete Car</Link>
+                  <Link to="/delete" className="block py-2 pl-3 pr-4 text-base text-gray-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0">Delete Car</Link>
                 </li>
                 <li>
-                  <Link to={`/favorite`} className="block py-2 pl-3 pr-4 text-base text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Favorites</Link>
+                  <Link to={`/favorite`} className="block py-2 pl-3 pr-4 text-base text-gray-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0">Favorites</Link>
                 </li>
                  <li>
-                  <button onClickCapture={logout} className="block py-2 pl-3 pr-4 text-base text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Logout</button>
+                  <button onClickCapture={logout} className="block py-2 pl-3 pr-4 text-base text-gray-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0">Logout</button>
                 </li>
                 </>
               )}
@@ -82,29 +83,29 @@ export default function Navbar() {
           <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             {!isUserLoggedIn ? (
               <>
-              <li className="p-4 md:hover:bg-red-700 text-white">
-                <Link to="/sign-in" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base hover:bg-gray-100 md:hover:bg-red-700 md:border-0 md:hover:text-white md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Sign in</Link>
+              <li className={`px-4 py-2 md:hover:border-b-4 md:hover:border-red-700 ${menuTextColor} transform transition-all duration-300`}>
+                <Link to="/sign-in" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0 md:hover:text-white md:p-0">Sign in</Link>
               </li>
-              <li className="p-4 md:hover:bg-red-700 text-white">
-                <Link to="/sign-up" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base hover:bg-gray-100 md:hover:bg-red-700 md:border-0 md:hover:text-white md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Sign up</Link>
+              <li className={`px-4 py-2 md:hover:border-b-4 md:hover:border-red-700 ${menuTextColor} transform transition-all duration-300`}>
+                <Link to="/sign-up" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0 md:hover:text-white md:p-0">Sign up</Link>
               </li>
               </>
             ) : (
               <>
-              <li className="p-4 md:hover:bg-red-700 text-white transform transition-all duration-300">
-                <Link to="/cars" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base hover:bg-gray-100 md:hover:bg-red-700 md:border-0 md:hover:text-white md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Cars</Link>
+              <li className={`px-4 py-2 md:hover:border-b-4 md:hover:border-red-700 ${menuTextColor} transform transition-all duration-300`}>
+                <Link to="/cars" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0 md:hover:text-white md:p-0">Cars</Link>
               </li>
-              <li className="p-4 md:hover:bg-red-700 text-white transform transition-all duration-300">
-                <Link to="/add" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base hover:bg-gray-100  md:border-0 md:hover:text-white md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Add Cars</Link>
+              <li className={`px-4 py-2 md:hover:border-b-4 md:hover:border-red-700 ${menuTextColor} transform transition-all duration-300`}>
+                <Link to="/add" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0 md:hover:text-white md:p-0">Add Cars</Link>
               </li>
-              <li className="p-4 md:hover:bg-red-700 text-white transform transition-all duration-300">
-                <Link to="/delete" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base hover:bg-gray-100  md:border-0 md:hover:text-white md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Delete Cars</Link>
+              <li className={`px-4 py-2 md:hover:border-b-4 md:hover:border-red-700 ${menuTextColor} transform transition-all duration-300`}>
+                <Link to="/delete" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0 md:hover:text-white md:p-0">Delete Cars</Link>
               </li>
-              <li className="p-4 md:hover:bg-red-700 text-white transform transition-all duration-300">
-                <Link to={`/favorite`} className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base hover:bg-gray-100  md:border-0 md:hover:text-white md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Favorites</Link>
+              <li className={`px-4 py-2 md:hover:border-b-4 md:hover:border-red-700 ${menuTextColor} transform transition-all duration-300`}>
+                <Link to={`/favorite`} className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0 md:hover:text-white md:p-0">Favorites</Link>
               </li>
-              <li className="p-4 md:hover:bg-red-700 text-white transform transition-all duration-300">
-                <button onClickCapture={logout} className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base hover:bg-gray-100 md:border-0 md:hover:text-white md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Logout</button>
+              <li className={`px-4 py-2 md:hover:border-b-4 md:hover:border-red-700 ${menuTextColor} transform transition-all duration-300`}>
+                <button onClickCapture={logout} className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0">Logout</button>
               </li>
               </>
             )}
