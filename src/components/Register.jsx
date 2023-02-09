@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { postUser } from "./../redux/user/api";
 import logo from "../assets/cargogo_logo.png";
 
