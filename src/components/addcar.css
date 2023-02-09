@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1548180367-1eebe054c9c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=800');
+  opacity: 0.7;
+  background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+.add-form input {
+  width: 80%;
+  margin: 0.5rem 0;
+  border: 1px solid #4e4e4e;
+  font-size: 1rem;
+  font-family: 'Noto Serif', serif;
+  font-weight: 700;
+  background-color: transparent;
+}
+
+.add-form input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.add-form input:focus {
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .add-form input {
+    font-size: 0.7rem;
+  }
+}
+
+.add-form button {
+  width: 8rem;
+  margin: 0.5rem 0;
+  border: 2px solid rgb(185 28 28);
+  font-size: 1rem;
+  font-family: 'Noto Serif', serif;
+  font-weight: 700;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+button:hover {
+  color: white;
+  background-color: rgb(185 28 28);
+}
+
+.add-form h2 {
+  font-size: 2rem;
+  font-family: 'Noto Serif', serif;
+  font-weight: 700;
+  color: #03022e;
+  text-align: center !important;
+}
