@@ -7,7 +7,7 @@ export const postUser = async (user) => {
     return response;
   });
   return response.data;
-  };
+};
 
 export const getUser = async (userlogin) => {
   const response = await axios.post(`${baseUrl}users/login`, userlogin).then((res) => {
