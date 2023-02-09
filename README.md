@@ -30,7 +30,6 @@
 CarGoGo is a car rental website that provides customers with an easy and convenient way for users to add, delete, and favorite the car they want.
 
 - [Backend](https://github.com/shyusu4/CarGoGo-Backend)<a name="rails-backend"></a>
-- [Kanban Board](https://github.com/users/RiyaBulia12/projects/8/views/1)<a name="kanban-board"></a>
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -65,7 +64,19 @@ CarGoGo is a car rental website that provides customers with an easy and conveni
 - **Users can add/remove a Car**
 - **Users can favorite a Car**
 
+## [Kanban Board](https://github.com/users/RiyaBulia12/projects/8/views/1)<a name="kanban-board"></a>
+Initial Phase
+<img width="1440" alt="Screenshot 2023-01-25 at 4 12 24 PM" src="https://user-images.githubusercontent.com/24832846/214542828-bf8473a2-1909-48db-aec9-2273962d2d91.png">
+
+Final Phase
+<img width="1440" alt="Screenshot 2023-02-09 at 4 57 33 PM" src="https://user-images.githubusercontent.com/24832846/217800359-b9ab1b5a-ce8f-40aa-8cf8-04555124881c.png">
+
 ## 💻 Website Mockup <a name="screenshots"></a>
+![Screenshot (132)](https://user-images.githubusercontent.com/106587342/217828870-81a38dd0-6089-4d1b-913a-1b613d3dac0d.png)
+![Screenshot (133)](https://user-images.githubusercontent.com/106587342/217828890-d20731ca-bac6-4411-a9a5-794f869b9516.png)
+![Screenshot (134)](https://user-images.githubusercontent.com/106587342/217828909-48dda4b7-86c7-45de-be10-e2275939694b.png)
+![Screenshot (135)](https://user-images.githubusercontent.com/106587342/217828932-29e73647-a7a1-4f47-b194-1ba01dfb4087.png)
+![Screenshot (136)](https://user-images.githubusercontent.com/106587342/217828958-a0b0353a-32be-4cdc-a28b-66a2d380a0d9.png)
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
