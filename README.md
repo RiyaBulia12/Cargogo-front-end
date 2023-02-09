@@ -69,8 +69,7 @@ CarGoGo is a car rental website that provides customers with an easy and conveni
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-
-- [Live Demo](https://deploy-preview-33--frabjous-profiterole-723fe2.netlify.app/)
+- [Live Demo](https://frabjous-profiterole-723fe2.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
