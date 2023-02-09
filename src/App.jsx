@@ -10,15 +10,10 @@ import HomePage from './components/HomePage';
 import Register from './components/Register';
 import Login from './components/login';
 import CarDetails from './components/CarDetails';
-import Navbar from './components/Navbar';
 
 function App() {
-  const location = useLocation();
-  const isHomePage = location.pathname === '/';
-
   return (
     <div className="App">
-      {isHomePage ? null : <Navbar />}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/sign-up" element={<Register />} />
