@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export default function HomePage() {
+export const HomePage = () => {
   return (
     <div className="bg-[url('https://images.unsplash.com/photo-1616634375264-2d2e17736a36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80')] h-screen bg-no-repeat bg-cover bg-center bg-fixed">
       <div className="md:pt-52 md:ml-24 py-36 px-10">

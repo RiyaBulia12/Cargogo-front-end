@@ -3,7 +3,7 @@ import { useState } from 'react';
 import logo from '../assets/cargogo_logo.png';
 import { useLocation } from 'react-router-dom';
 
-export default function Navbar() {
+export const Navbar = () => {
   const [showSidebar, setSidebar] = useState(false);
   const user = JSON.parse(localStorage.getItem('userInfo'));
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(user ? true : false);
@@ -105,7 +105,7 @@ export default function Navbar() {
                 <Link to={`/favorite`} className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0  md:p-0">Favorites</Link>
               </li>
               <li className={`px-4 py-2 md:hover:border-b-4 md:hover:border-red-700 ${menuTextColor} transform transition-all duration-300`}>
-                <button onClickCapture={logout} className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:hover:bg-transparent md:border-0  md:p-0">Logout</button>
+                <button onClickCapture={logout} className={`p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:hover:bg-transparent md:border-0 md:p-0 md:hover:${menuTextColor} `}>Logout</button>
               </li>
               </>
             )}

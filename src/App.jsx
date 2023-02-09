@@ -1,17 +1,17 @@
 import './App.css';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Favorite from './components/Favorite';
 import DeleteCar from './components/DeleteCar';
 import NotFound from './components/404/NotFound';
 import CarList from './components/CarList';
 import AddCar from './components/AddCar';
 import RentCar from './components/RentCar';
-import HomePage from './components/HomePage';
+import { HomePage } from './components/HomePage';
 import Register from './components/Register';
 import Login from './components/login';
 import CarDetails from './components/CarDetails';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Routes>

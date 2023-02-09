@@ -6,7 +6,7 @@ import { handleDelete } from '../redux/cars/reducer';
 const ItemComponent = ({ carList, title }) => {
   const dispatch = useDispatch();
   return (
-    <div className="p-[2.5rem] sm:p-[3.5rem] md:p-[60px] bg-slate-50 h-screen transform transition-all ">
+    <div className="px-[2.5rem] sm:px-[3.5rem] md:px-[60px] md:py-[0px] h-screen transform transition-all ">
       <div className="flex items-center justify-center">
         <div className="">
           <div className="mt-8 grid grid-cols-2 gap-2 rounded-xl bg-white p-2 md:grid-cols-3 lg:grid-cols-4 w-full">

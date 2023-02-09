@@ -9,7 +9,7 @@
   - [Kanban Board](#kanban-board)
   - [Rails Backend](#rails-backend)
   - [🚀 Live Demo](#live-demo)
-  
+
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -108,11 +108,6 @@ Run project using this command:
 yarn dev
 ```
 
-Run tests using this command:
-```
-npm test
-```
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
@@ -174,6 +169,6 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT]() licensed.
+This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

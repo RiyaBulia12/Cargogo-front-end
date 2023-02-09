@@ -5,7 +5,7 @@ import axios from 'axios';
 import baseUrl from '../redux/baseUrl';
 import { addToFavorite } from '../redux/favorite/api';
 
-function CarDetails() {
+const CarDetails = () => {
   const dispatch = useDispatch();
   const params = useParams();
   const url = `${baseUrl}/cars/${params.id}`;
@@ -31,7 +31,7 @@ function CarDetails() {
   };
 
   return (
-    <div className="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
+    <div className="md:flex items-start justify-center 2xl:px-20 md:px-6">
       <div className="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
         <img className="object-fit w-[55rem] h-[38rem]" alt="img of car" src={data.image} />
       </div>
@@ -39,33 +39,36 @@ function CarDetails() {
         <img className="object-fit w-[45rem] h-[28rem]" alt="img of car" src={data.image} />
       </div>
       <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
-        <div className="border-b border-gray-200 pb-6">
-          <p className="text-sm leading-none text-gray-600">{data.color}</p>
-          <h1
-            className="lg:text-2xl text-xl font-bold lg:leading-6 leading-7 text-gray-800 mt-2 uppercase"
+        <div className="md:px-0 px-9">
+          <div className="border-b border-gray-200 pb-6">
+            <p className="text-sm leading-none text-gray-600">{data.color}</p>
+            <h1
+              className="lg:text-2xl text-xl font-bold lg:leading-6 leading-7 text-gray-800 mt-2 uppercase"
+            >
+              {data.model}
+            </h1>
+          </div>
+          <div>
+            <h3 className="mt-2 font-semibold">About this listing</h3>
+            <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 mt-3 mb-1">
+              <span>Price: </span>
+              $
+              {data.price}
+            </p>
+            <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 mb-10">
+              <span>Model: </span>
+              {data.description}
+            </p>
+          </div>
+        </div>
+          <button
+            type="button"
+            onClick={handleAddToFavorite}
+            className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-base flex items-center justify-center leading-none text-white bg-red-700 w-full py-4 hover:bg-gray-700"
           >
-            {data.model}
-          </h1>
-        </div>
-        <div>
-          <h3 className="mt-2 font-semibold">About this listing</h3>
-          <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 mt-3 mb-1">
-            <span>Price: </span>
-            $
-            {data.price}
-          </p>
-          <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 mb-10">
-            <span>Model: </span>
-            {data.description}
-          </p>
-        </div>
-        <button
-          type="button"
-          onClick={handleAddToFavorite}
-          className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-base flex items-center justify-center leading-none text-white bg-red-700 w-full py-4 hover:bg-gray-700"
-        >
-          Add to favorites
-        </button>
+            Add to favorites
+          </button>
+
         {message && (
         <div className="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert">
           <div className="flex">
