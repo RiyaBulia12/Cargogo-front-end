@@ -84,28 +84,28 @@ export default function Navbar() {
             {!isUserLoggedIn ? (
               <>
               <li className={`px-4 py-2 md:hover:border-b-4 md:hover:border-red-700 ${menuTextColor} transform transition-all duration-300`}>
-                <Link to="/sign-in" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0 md:hover:text-white md:p-0">Sign in</Link>
+                <Link to="/sign-in" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0  md:p-0">Sign in</Link>
               </li>
               <li className={`px-4 py-2 md:hover:border-b-4 md:hover:border-red-700 ${menuTextColor} transform transition-all duration-300`}>
-                <Link to="/sign-up" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0 md:hover:text-white md:p-0">Sign up</Link>
+                <Link to="/sign-up" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0  md:p-0">Sign up</Link>
               </li>
               </>
             ) : (
               <>
               <li className={`px-4 py-2 md:hover:border-b-4 md:hover:border-red-700 ${menuTextColor} transform transition-all duration-300`}>
-                <Link to="/cars" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0 md:hover:text-white md:p-0">Cars</Link>
+                <Link to="/cars" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0  md:p-0">Cars</Link>
               </li>
               <li className={`px-4 py-2 md:hover:border-b-4 md:hover:border-red-700 ${menuTextColor} transform transition-all duration-300`}>
-                <Link to="/add" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0 md:hover:text-white md:p-0">Add Cars</Link>
+                <Link to="/add" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0  md:p-0">Add Cars</Link>
               </li>
               <li className={`px-4 py-2 md:hover:border-b-4 md:hover:border-red-700 ${menuTextColor} transform transition-all duration-300`}>
-                <Link to="/delete" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0 md:hover:text-white md:p-0">Delete Cars</Link>
+                <Link to="/delete" className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0  md:p-0">Delete Cars</Link>
               </li>
               <li className={`px-4 py-2 md:hover:border-b-4 md:hover:border-red-700 ${menuTextColor} transform transition-all duration-300`}>
-                <Link to={`/favorite`} className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0 md:hover:text-white md:p-0">Favorites</Link>
+                <Link to={`/favorite`} className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:border-0  md:p-0">Favorites</Link>
               </li>
               <li className={`px-4 py-2 md:hover:border-b-4 md:hover:border-red-700 ${menuTextColor} transform transition-all duration-300`}>
-                <button onClickCapture={logout} className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0">Logout</button>
+                <button onClickCapture={logout} className="p-4 block font-semibold uppercase py-2 pl-3 pr-4 text-base md:hover:bg-transparent md:border-0  md:p-0">Logout</button>
               </li>
               </>
             )}
