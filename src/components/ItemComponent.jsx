@@ -7,9 +7,10 @@ const ItemComponent = ({ carList, title }) => {
   const dispatch = useDispatch();
   return (
     <div className="px-[2.5rem] sm:px-[3.5rem] md:px-[60px] md:py-[0px] h-screen transform transition-all ">
+      <h2 className="text-center font-semibold text-red-700">{title}</h2>
       <div className="flex items-center justify-center">
         <div className="">
-          <div className="mt-8 grid grid-cols-2 gap-2 rounded-xl bg-white p-2 md:grid-cols-3 lg:grid-cols-4 w-full">
+          <div className="mt-4 grid grid-cols-2 gap-2 rounded-xl bg-white p-2 md:grid-cols-3 lg:grid-cols-4 w-full">
             {carList.map((car) => (
               <div className="group relative overflow-hidden rounded-xl shadow-xl" key={car.id}>
                 <div className="h-full w-full group-hover:scale-125 transform transition-all duration-300">

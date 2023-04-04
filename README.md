@@ -29,7 +29,7 @@
 # 📖 CarGoGo <a name="about-project"></a>
 CarGoGo is a car rental website that provides customers with an easy and convenient way for users to add, delete, and favorite the car they want.
 
-- [Backend](https://github.com/shyusu4/CarGoGo-Backend)<a name="rails-backend"></a>
+- [Backend](https://github.com/RiyaBulia12/CarGoGo-Backend)<a name="rails-backend"></a>
 
 ## 🛠 Built With <a name="built-with"></a>
 

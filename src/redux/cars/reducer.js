@@ -1,6 +1,6 @@
 import axios from 'axios';
+import baseUrl from '../baseUrl';
 
-const baseUrl = 'https://cargogo-backend-production.up.railway.app/api/v1/';
 const GET_CAR_LIST = 'GET_CAR_LIST';
 const ADD_CAR = 'ADD_CAR';
 const initialState = [];
@@ -21,7 +21,7 @@ export const handleDelete = (itemId) => async (dispatch) => {
 
 export const addcar = (car) => (dispatch) => {
   axios
-    .post('https://cargogo-backend-production.up.railway.app/api/v1/cars', car)
+    .post(baseUrl, car)
     .then((res) => {
       dispatch({
         type: ADD_CAR,

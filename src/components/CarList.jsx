@@ -9,7 +9,7 @@ const CarList = () => {
     useEffect(() => {
       dispatch(getCarList());
     }, [dispatch]);
-  
+
     const scrollRight = () => {
       const container = document.querySelector('.scroll_content');
       container.scrollLeft += container.offsetWidth / 2;
@@ -28,7 +28,7 @@ const CarList = () => {
         document.querySelector('.left').classList.remove('disable');
       }
     };
-  
+
     return (
       <>
         {cars.hasErrors && (
@@ -40,7 +40,7 @@ const CarList = () => {
 
         {!cars.loading && !cars.hasErrors &&
           cars && cars.length > 0 ? (
-          <ItemComponent carList={cars} title={"Cars"}/>) : null}
+          <ItemComponent carList={cars} title={"Cars List"}/>) : null}
     </>
 
     );
