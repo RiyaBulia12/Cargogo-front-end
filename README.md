@@ -80,7 +80,7 @@ Final Phase
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-- [Live Demo](https://frabjous-profiterole-723fe2.netlify.app/)
+- [Live Demo](https://cargogo-rental-app.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
